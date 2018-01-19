@@ -1,6 +1,5 @@
 #!/usr/bin/bash
-now switch dawn
-NOW_URL=$(npm run deploy -- --token $NOW_TOKEN --team dawn)
+NOW_URL=$(now -e NODE_ENV=production --public --team dawn --token $NOW_TOKEN)
 
 curl -X POST \
   -H 'Content-type: application/json' \
