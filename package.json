@@ -8,7 +8,7 @@
     "build": "next build",
     "start": "cross-env NODE_ENV=production node server.js",
     "deploy": "now -e NODE_ENV=production --public",
-    "deploy:ci": "now switch dawn --token $NOW_TOKEN && npm run deploy -- --token $NOW_TOKEN --team dawn",
+    "deploy:ci": "now --token $NOW_TOKEN switch dawn && npm run deploy -- --token $NOW_TOKEN --team dawn",
     "prettier": "prettier --config .prettierrc --write *.js {components,handlers,lib,pages}/*.js",
     "lint": "prettier --config .prettierrc *.js {components,handlers,lib,pages}/*.js",
     "precommit": "npm run contrib:build && git add README.md && lint-staged",
